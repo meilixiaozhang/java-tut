@@ -1,5 +1,7 @@
 package com.xiaozhang;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Date;
 import java.awt.Point;
 
@@ -48,14 +50,24 @@ public class Main {
 //        System.out.println(message.trim()); // get rid of white spaces
 //      =======================================================
 //      4. Escape Sequences
-        String message2 = "Hello \"Pretty\""; //fix double quotes in string with a backslash
-        System.out.println(message2);
-        String message3 = "c:\\Windows\\..."; //fix a back slash in string with another backslash
-        System.out.println(message3);
-        String message4 = "c:\nWindows\\..."; // insert a new line: \n
-        System.out.println(message4);
-        String message5 = "c:\tWindows\\..."; // for a tab
-        System.out.println(message5);
-
+//        String message2 = "Hello \"Pretty\""; //fix double quotes in string with a backslash
+//        System.out.println(message2);
+//        String message3 = "c:\\Windows\\..."; //fix a back slash in string with another backslash
+//        System.out.println(message3);
+//        String message4 = "c:\nWindows\\..."; // insert a new line: \n
+//        System.out.println(message4);
+//        String message5 = "c:\tWindows\\..."; // for a tab
+//        System.out.println(message5);
+//      =======================================================
+//      5. Arrays
+        int[] numbers = new int[5];
+        numbers[0] = 1;
+        numbers[1] = 2;
+        System.out.println(Arrays.toString(numbers));  //boolean array initialized as false, string array initialized as empty strings
+//      --------------------------------------------------------
+        int[] numbers2 = {2,3,4,1,5};
+        System.out.println(numbers2.length);
+        Arrays.sort(numbers2);
+        System.out.println(Arrays.toString(numbers2));
     }
 }
