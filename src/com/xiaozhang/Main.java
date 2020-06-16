@@ -60,14 +60,26 @@ public class Main {
 //        System.out.println(message5);
 //      =======================================================
 //      5. Arrays
-        int[] numbers = new int[5];
-        numbers[0] = 1;
-        numbers[1] = 2;
-        System.out.println(Arrays.toString(numbers));  //boolean array initialized as false, string array initialized as empty strings
-//      --------------------------------------------------------
-        int[] numbers2 = {2,3,4,1,5};
-        System.out.println(numbers2.length);
-        Arrays.sort(numbers2);
-        System.out.println(Arrays.toString(numbers2));
+//        int[] numbers = new int[5];
+//        numbers[0] = 1;
+//        numbers[1] = 2;
+//        System.out.println(Arrays.toString(numbers));  //boolean array initialized as false, string array initialized as empty strings
+////      -----------------------------------------------------
+//        int[] numbers2 = {2,3,4,1,5};
+//        System.out.println(numbers2.length);
+//        Arrays.sort(numbers2);
+//        System.out.println(Arrays.toString(numbers2));
+//      =======================================================
+//      6. Multi-dimensional Arrays
+        int[][] matrix = new int[2][3]; // 2 row & 3 columns
+        matrix[0][0] = 1;
+        System.out.println(Arrays.deepToString(matrix));
+//      -------------------------------------------------------
+        int[][][] cube = new int[2][3][4];
+        cube[0][0][0] = 3;
+        System.out.println(Arrays.deepToString(cube));
+//      -------------------------------------------------------
+        int [][] matrix2 = {{1,2,3},{4,5,6}};
+        System.out.println(Arrays.deepToString(matrix2));
     }
 }
