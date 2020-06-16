@@ -23,16 +23,28 @@ public class Main {
 //      2. differences btw primary and reference types
 //      primitive type store values at different memory locations
 //      copy by value, and the values are completely independent
-        byte x = 1;
-        byte y = x;
-        x = 2;
-        System.out.println(y);
+//        byte x = 1;
+//        byte y = x;
+//        x = 2;
+//        System.out.println(y);
 //      -----------------------------------------------------
 //      reference type: allocate memory to store point, another one stores the address in that location
 //      store reference in the memory
-        Point point1 = new Point(1, 1);
-        Point point2 = point1;
-        point1.x = 2;
-        System.out.println(point2);
+//        Point point1 = new Point(1, 1);
+//        Point point2 = point1;
+//        point1.x = 2;
+//        System.out.println(point2);
+//      =====================================================
+//      3. Strings
+        String message = "Hello World" + "!!";
+        System.out.println(message.endsWith("!!"));
+        System.out.println(message.startsWith("loo"));
+        System.out.println(message.length());
+        System.out.println(message.indexOf("o")); // returns index
+        System.out.println(message.indexOf("sky")); // returns -1
+        System.out.println(message.replace("!", "*")); // The original string is not changed, in Java Strings are IMMUTABLE
+        System.out.println(message.toLowerCase());
+        System.out.println(message.toUpperCase());
+        System.out.println(message.trim()); // get rid of white spaces
     }
 }
