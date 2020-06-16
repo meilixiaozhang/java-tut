@@ -36,15 +36,26 @@ public class Main {
 //        System.out.println(point2);
 //      =====================================================
 //      3. Strings
-        String message = "Hello World" + "!!";
-        System.out.println(message.endsWith("!!"));
-        System.out.println(message.startsWith("loo"));
-        System.out.println(message.length());
-        System.out.println(message.indexOf("o")); // returns index
-        System.out.println(message.indexOf("sky")); // returns -1
-        System.out.println(message.replace("!", "*")); // The original string is not changed, in Java Strings are IMMUTABLE
-        System.out.println(message.toLowerCase());
-        System.out.println(message.toUpperCase());
-        System.out.println(message.trim()); // get rid of white spaces
+//        String message = "Hello World" + "!!";
+//        System.out.println(message.endsWith("!!"));
+//        System.out.println(message.startsWith("loo"));
+//        System.out.println(message.length());
+//        System.out.println(message.indexOf("o")); // returns index
+//        System.out.println(message.indexOf("sky")); // returns -1
+//        System.out.println(message.replace("!", "*")); // The original string is not changed, in Java Strings are IMMUTABLE
+//        System.out.println(message.toLowerCase());
+//        System.out.println(message.toUpperCase());
+//        System.out.println(message.trim()); // get rid of white spaces
+//      =======================================================
+//      4. Escape Sequences
+        String message2 = "Hello \"Pretty\""; //fix double quotes in string with a backslash
+        System.out.println(message2);
+        String message3 = "c:\\Windows\\..."; //fix a back slash in string with another backslash
+        System.out.println(message3);
+        String message4 = "c:\nWindows\\..."; // insert a new line: \n
+        System.out.println(message4);
+        String message5 = "c:\tWindows\\..."; // for a tab
+        System.out.println(message5);
+
     }
 }
