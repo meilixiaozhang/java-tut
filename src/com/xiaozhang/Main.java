@@ -1,9 +1,11 @@
 package com.xiaozhang;
 
 import java.lang.reflect.Array;
+import java.text.NumberFormat;
 import java.util.Arrays;
 import java.util.Date;
 import java.awt.Point;
+import java.util.Scanner;
 
 public class Main {
 
@@ -64,22 +66,127 @@ public class Main {
 //        numbers[0] = 1;
 //        numbers[1] = 2;
 //        System.out.println(Arrays.toString(numbers));  //boolean array initialized as false, string array initialized as empty strings
-////      -----------------------------------------------------
+//      -----------------------------------------------------
 //        int[] numbers2 = {2,3,4,1,5};
 //        System.out.println(numbers2.length);
 //        Arrays.sort(numbers2);
 //        System.out.println(Arrays.toString(numbers2));
 //      =======================================================
 //      6. Multi-dimensional Arrays
-        int[][] matrix = new int[2][3]; // 2 row & 3 columns
-        matrix[0][0] = 1;
-        System.out.println(Arrays.deepToString(matrix));
+//        int[][] matrix = new int[2][3]; // 2 row & 3 columns
+//        matrix[0][0] = 1;
+//        System.out.println(Arrays.deepToString(matrix));
 //      -------------------------------------------------------
-        int[][][] cube = new int[2][3][4];
-        cube[0][0][0] = 3;
-        System.out.println(Arrays.deepToString(cube));
+//        int[][][] cube = new int[2][3][4];
+//        cube[0][0][0] = 3;
+//        System.out.println(Arrays.deepToString(cube));
 //      -------------------------------------------------------
-        int [][] matrix2 = {{1,2,3},{4,5,6}};
-        System.out.println(Arrays.deepToString(matrix2));
+//        int [][] matrix2 = {{1,2,3},{4,5,6}};
+//        System.out.println(Arrays.deepToString(matrix2));
+//      =======================================================
+//      7. constants
+//        final float PI = 3.14F; //treat this as a constant
+//      =======================================================
+//      8. arithmetic expressions
+//        int add = 10 + 3;
+//        System.out.println(add); //13
+//      -------------------------------------------------------
+//        int minus = 10 - 3;
+//        System.out.println(minus); //7
+//      -------------------------------------------------------
+//        double divide = (double)10 / (double)3;
+//        System.out.println(divide); //3.33333333
+//      -------------------------------------------------------
+//        int x = 1;
+//        x++;
+//        System.out.println(x); //2
+//      -------------------------------------------------------
+//        int y = 1;
+//        int z = x++;
+//        System.out.println(y); //1
+//        System.out.println(z); //2
+//      -------------------------------------------------------
+//        int a = 1;
+//        int b = ++x;
+//        System.out.println(a); //2
+//        System.out.println(b); //2
+//      -------------------------------------------------------
+//        int c = 1;
+//        c += 2;
+//        System.out.println(c); //3
+//      =======================================================
+//      9. order of operation
+//        int num = 10 + 3 * 2;
+//        System.out.println(num); //() > */ > +-
+//      =======================================================
+//      10. casting
+        //  Implicit casting automatically converting
+        //  byte > short > int > long > float > double
+//        short x = 1; // 2 bytes for short
+//        int y = x + 2; // 4 bytes for int
+//        System.out.println(y);
+//      -------------------------------------------------------
+//        double xx = 1.1;
+//        double yy = x + 2;
+//        System.out.println(yy); // 3.0
+//        int y2 = (int)xx + 2;
+//        System.out.println(y2); // 3
+//      --------------------------------------------------------
+//        String xxx = "1";
+//        Integer.parseInt(xxx);
+//        int yyy = (int)x + 2;
+//        System.out.println(yyy); // 3
+//      -------------------------------------------------------
+//        String x1 = "1.1";
+//        double y1 = Double.parseDouble(x1) + 2;
+//        System.out.println(y1); // 3.1
+//      =======================================================
+//      11. The Math Class
+//        int a = Math.round(3.2837F);
+//        System.out.println(a);
+//      -------------------------------------------------------
+//        int b = (int)Math.ceil(1.2F);
+//        System.out.println(b);
+//      -------------------------------------------------------
+//        int c = (int)Math.floor(1.45F);
+//        System.out.println(c);
+//      -------------------------------------------------------
+//        int d = Math.max(1,2);
+//        System.out.println(d);
+//      -------------------------------------------------------
+//        int e = Math.min(1,2);
+//        System.out.println(e);
+//      -------------------------------------------------------
+//        double f = Math.random();
+//        System.out.println(f);
+//      -------------------------------------------------------
+//        double g = Math.random()*100; //btw 1 - 100
+//        System.out.println(g);
+//      -------------------------------------------------------
+//        int h = (int) Math.round(Math.random()*100);
+//        System.out.println(h);
+//      =======================================================
+//      12. Formatting numbers
+//        NumberFormat currency = NumberFormat.getCurrencyInstance();
+//        String result = currency.format(1234567.891);
+//        System.out.println(result); //$1,234,567.89
+//      -------------------------------------------------------
+//        NumberFormat percent = NumberFormat.getPercentInstance();
+//        String result2 = percent.format(0.15);
+//        System.out.println(result2); // 15%
+//      -------------------------------------------------------
+//        String result3 = NumberFormat.getPercentInstance().format(0.3); // chain function
+//        System.out.println(result3); // 30%
+//      =======================================================
+//      13. Reading input
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.print("Age: ");
+//        byte age = scanner.nextByte(); //can only parse byte value
+//        System.out.println("You are " + age + " years old.");
+//      --------------------------------------------------------
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Name: ");
+        String name = scanner.nextLine().trim();
+        System.out.println("Your name is " + name + ".");
     }
 }
