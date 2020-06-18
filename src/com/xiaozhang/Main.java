@@ -184,9 +184,32 @@ public class Main {
 //        byte age = scanner.nextByte(); //can only parse byte value
 //        System.out.println("You are " + age + " years old.");
 //      --------------------------------------------------------
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.print("Name: ");
+//        String name = scanner.nextLine().trim();
+//        System.out.println("Your name is " + name + ".");
+//      ========================================================
+//      14. Mortgage Calculator Project
+        final byte MONTH_IN_YEAR = 12;
+        final byte PERCENT = 100;
+
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Name: ");
-        String name = scanner.nextLine().trim();
-        System.out.println("Your name is " + name + ".");
+
+        System.out.print("Principal: ");
+        int principal = scanner.nextInt();
+
+        System.out.print("Annual Interest Rate: ");
+        float interest = scanner.nextFloat();
+
+        System.out.print("Period (Years): ");
+        byte period = scanner.nextByte();
+
+        float r = interest / PERCENT / MONTH_IN_YEAR;
+        int months = period * MONTH_IN_YEAR;
+
+        double mort = principal * (r * Math.pow(1+r, months)) / (Math.pow(1+r, months) - 1);
+        String mortgage = NumberFormat.getCurrencyInstance().format(mort);
+        System.out.println("Mortgage: "+mortgage);
+
     }
 }
