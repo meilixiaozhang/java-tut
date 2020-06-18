@@ -10,6 +10,10 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+
+//      ======================= TYPES ==========================
+
+
 //      1. primitive types & reference types
 //      primitive types -> to store simple values or characters
 //      byte long double int float char boolean
@@ -190,26 +194,192 @@ public class Main {
 //        System.out.println("Your name is " + name + ".");
 //      ========================================================
 //      14. Mortgage Calculator Project
-        final byte MONTH_IN_YEAR = 12;
+//        final byte MONTH_IN_YEAR = 12;
+//        final byte PERCENT = 100;
+//
+//        Scanner scanner = new Scanner(System.in);
+//
+//        System.out.print("Principal: ");
+//        int principal = scanner.nextInt();
+//
+//        System.out.print("Annual Interest Rate: ");
+//        float interest = scanner.nextFloat();
+//
+//        System.out.print("Period (Years): ");
+//        byte period = scanner.nextByte();
+//
+//        float r = interest / PERCENT / MONTH_IN_YEAR;
+//        int months = period * MONTH_IN_YEAR;
+//
+//        double mort = principal * (r * Math.pow(1+r, months)) / (Math.pow(1+r, months) - 1);
+//        String mortgage = NumberFormat.getCurrencyInstance().format(mort);
+//        System.out.println("Mortgage: "+mortgage);
+
+
+//      ========================================================================
+
+
+//      ==================== CONTROL FLOW ======================
+
+
+//      1. Comparison Operators
+//        int x = 1;
+//        int y = 1;
+//        System.out.println(x=y); // 1
+//        System.out.println(x == y); // true
+//        System.out.println(x != y); // false
+//        System.out.println(x > y);  // false
+//        System.out.println(x >= y); // true
+//        System.out.println(x < y); // false
+//        System.out.println(x <= y); // true
+//      ========================================================
+//      2. Logical Operators
+//        int temp = 22;
+//        boolean isWarm = temp > 20 && temp < 30;
+//        System.out.println(isWarm); // true
+//      --------------------------------------------------------
+//        boolean hasHighIncome = true;
+//        boolean hasGoodCredit = true;
+//        boolean hasCriminalRecord = false;
+//        boolean isEligible = !hasCriminalRecord && (hasHighIncome || hasGoodCredit);
+//        System.out.println(isEligible);
+//      ========================================================
+//      3. If Statements
+//        int temp = 18;
+//        if (temp > 30) {
+//            System.out.println("It's a hot day");
+//            System.out.println("Drink plenty of water");
+//        } else if (temp > 20) {
+//            System.out.println("It's a nice day");
+//        } else {
+//            System.out.println("It's cold");
+//        }
+//      ========================================================
+//      4. Simplifying If Statements
+//        int income = 120_000;
+//        boolean hasHighIncome = income > 100_000;
+//        System.out.println(hasHighIncome);
+//      ========================================================
+//      5. Ternary Operators
+//        int income = 120_000;
+//        String className = income > 100_000 ? "First" : "Economy";
+//      ========================================================
+//      6. Switch Statements
+//        String role = "admin";
+//        switch (role) {
+//            case "admin":
+//                System.out.println("You are an admin.");
+//                break;
+//            case "moderator":
+//                System.out.println("You are a moderator");
+//                break;
+//            default:
+//                System.out.println("You are a guest");
+//        }
+//      ========================================================
+//      7. FizzBuzz
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.print("Number: ");
+//        int num = scanner.nextInt();
+//        if (num % 5== 0 && num % 3 == 0) {
+//            System.out.println("FizzBuzz");
+//        } else if (num % 5 == 0) {
+//            System.out.println("Buzz");
+//        } else if (num % 3 == 0) {
+//            System.out.println("Fizz");
+//        } else {
+//            System.out.println(num);
+//        }
+//      =========================================================
+//      8. For Loop
+//        for (int i=0; i<5; i++) {
+//            System.out.println("Hello World");
+//        }
+//      ---------------------------------------------------------
+//        for (int j=5; j>0; j--) {
+//            System.out.println("Hello, this is " + j);
+//        }
+//      =========================================================
+//      9. While Loops
+//        String input = "";
+//        Scanner scanner = new Scanner(System.in);
+//        while (!input.equals("quit")) {
+//            System.out.print("Input: ");
+//            input = scanner.next().toLowerCase();
+//            System.out.println(input);
+//        }
+//      =========================================================
+//      10. Do..While Loop
+//        String input = "";
+//        Scanner scanner = new Scanner(System.in);
+//        do {
+//            System.out.print("Input: ");
+//            input = scanner.next().toLowerCase();
+//            System.out.println(input);
+//        } while (!input.equals("quit"));
+//      =========================================================
+//      11. Break and Continue Statements
+//        String input = "";
+//        Scanner scanner = new Scanner(System.in);
+//        while (true) {
+//            System.out.print("Input: ");
+//            input = scanner.next().toLowerCase();
+//            if (input.equals("pass"))
+//                continue;
+//            if (input.equals("quit"))
+//                break;
+//            System.out.println(input);
+//        }
+//      =========================================================
+//      12. For-Each Loop
+//        String[] fruits = {"Apple", "Mango", "Orange"};
+//        for (String fruit: fruits) {
+//            System.out.println(fruit);
+//        }
+//        for(int i=fruits.length; i > 0; i--) {
+//            System.out.println(fruits[i-1]);
+//        }
+//      =========================================================
+//      13. Mortgage Calculator
+        final byte MONTHS = 12;
         final byte PERCENT = 100;
+
+        int principal = 0;
+        float monthlyRate = 0;
+        int payments = 0;
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Principal: ");
-        int principal = scanner.nextInt();
+        while (true) {
+            System.out.print("Principal ($1K - $1M): ");
+            principal = scanner.nextInt();
+            if (principal >= 1_000 && principal <= 1_000_000)
+                break;
+            System.out.println("Enter a number between 1,000 to 1,000,000.");
+        }
 
-        System.out.print("Annual Interest Rate: ");
-        float interest = scanner.nextFloat();
+        while (true) {
+            System.out.print("Annual Interest Rate: ");
+            float annualRate = scanner.nextFloat();
+            if (annualRate > 0 && annualRate <= 30) {
+                monthlyRate = annualRate / MONTHS / PERCENT;
+                break;
+            }
+            System.out.println("Enter a value greater than 0 and less than or equal to 30.");
+        }
 
-        System.out.print("Period (Years): ");
-        byte period = scanner.nextByte();
+        while (true) {
+            System.out.print("Period (Years): ");
+            byte years = scanner.nextByte();
+            if (years >= 1 && years <= 30) {
+                payments = years * MONTHS;
+                break;
+            }
+            System.out.println("Enter a value between 1 and 30.");
+        }
 
-        float r = interest / PERCENT / MONTH_IN_YEAR;
-        int months = period * MONTH_IN_YEAR;
-
-        double mort = principal * (r * Math.pow(1+r, months)) / (Math.pow(1+r, months) - 1);
+        double mort = principal * (monthlyRate * Math.pow(1+monthlyRate, payments)) / (Math.pow(1+monthlyRate, payments) - 1);
         String mortgage = NumberFormat.getCurrencyInstance().format(mort);
         System.out.println("Mortgage: "+mortgage);
-
     }
 }
