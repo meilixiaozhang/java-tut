@@ -341,45 +341,65 @@ public class Main {
 //        }
 //      =========================================================
 //      13. Mortgage Calculator
-        final byte MONTHS = 12;
-        final byte PERCENT = 100;
+//        final byte MONTHS = 12;
+//        final byte PERCENT = 100;
+//
+//        int principal = 0;
+//        float monthlyRate = 0;
+//        int payments = 0;
+//
+//        Scanner scanner = new Scanner(System.in);
+//
+//        while (true) {
+//            System.out.print("Principal ($1K - $1M): ");
+//            principal = scanner.nextInt();
+//            if (principal >= 1_000 && principal <= 1_000_000)
+//                break;
+//            System.out.println("Enter a number between 1,000 to 1,000,000.");
+//        }
+//
+//        while (true) {
+//            System.out.print("Annual Interest Rate: ");
+//            float annualRate = scanner.nextFloat();
+//            if (annualRate > 0 && annualRate <= 30) {
+//                monthlyRate = annualRate / MONTHS / PERCENT;
+//                break;
+//            }
+//            System.out.println("Enter a value greater than 0 and less than or equal to 30.");
+//        }
+//
+//        while (true) {
+//            System.out.print("Period (Years): ");
+//            byte years = scanner.nextByte();
+//            if (years >= 1 && years <= 30) {
+//                payments = years * MONTHS;
+//                break;
+//            }
+//            System.out.println("Enter a value between 1 and 30.");
+//        }
+//
+//        double mort = principal * (monthlyRate * Math.pow(1+monthlyRate, payments)) / (Math.pow(1+monthlyRate, payments) - 1);
+//        String mortgage = NumberFormat.getCurrencyInstance().format(mort);
+//        System.out.println("Mortgage: "+mortgage);
 
-        int principal = 0;
-        float monthlyRate = 0;
-        int payments = 0;
 
-        Scanner scanner = new Scanner(System.in);
+//      ====================================================================
 
-        while (true) {
-            System.out.print("Principal ($1K - $1M): ");
-            principal = scanner.nextInt();
-            if (principal >= 1_000 && principal <= 1_000_000)
-                break;
-            System.out.println("Enter a number between 1,000 to 1,000,000.");
-        }
 
-        while (true) {
-            System.out.print("Annual Interest Rate: ");
-            float annualRate = scanner.nextFloat();
-            if (annualRate > 0 && annualRate <= 30) {
-                monthlyRate = annualRate / MONTHS / PERCENT;
-                break;
-            }
-            System.out.println("Enter a value greater than 0 and less than or equal to 30.");
-        }
-
-        while (true) {
-            System.out.print("Period (Years): ");
-            byte years = scanner.nextByte();
-            if (years >= 1 && years <= 30) {
-                payments = years * MONTHS;
-                break;
-            }
-            System.out.println("Enter a value between 1 and 30.");
-        }
-
-        double mort = principal * (monthlyRate * Math.pow(1+monthlyRate, payments)) / (Math.pow(1+monthlyRate, payments) - 1);
-        String mortgage = NumberFormat.getCurrencyInstance().format(mort);
-        System.out.println("Mortgage: "+mortgage);
+//      ===========================CLEAN CODING=============================
+//
+//
+//      1. Creating Methods
+//      public -> it can be called outside its class
+//      void -> does not return any value
+        String message = greetUser("Mandy", "Zhang");
+//      ====================================================================
+//      2. Refactoring
     }
+
+    public static String greetUser(String firstName, String lastName) {
+        return "Hello " + firstName + " " + lastName;
+    }
+
+
 }
